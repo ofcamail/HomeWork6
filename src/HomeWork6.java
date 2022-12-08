@@ -1,4 +1,6 @@
+import java.sql.SQLOutput;
 import java.time.LocalDate;
+import java.util.Scanner;
 
 
 public class HomeWork6 {
@@ -42,7 +44,9 @@ public class HomeWork6 {
 
     public static void task1() {
         System.out.println("Задание 1");
-        int year1 = 2021;
+        Scanner yearScanner = new Scanner(System.in);
+        System.out.println("Enter the year");
+        int year1 = yearScanner.nextInt();
         boolean isLeapYear1 = checkYear(year1);
         if (isLeapYear1) {
             System.out.println(year1 + " високосный год");
@@ -53,14 +57,20 @@ public class HomeWork6 {
 
     public static void task2() {
         System.out.println("Задание 2");
-        int clientOs = 0;
-        int clientDeviceYear = 2015;
+        Scanner OS = new Scanner(System.in);
+        System.out.println("Enter 0 if you have an android or 1 if you have an IOS device");
+        int clientOs = OS.nextInt();
+        Scanner deviceYear = new Scanner(System.in);
+        System.out.println("Enter the year");
+        int clientDeviceYear = deviceYear.nextInt();
         checkClientOsAndYear(clientOs, clientDeviceYear);
     }
 
     public static void task3() {
         System.out.println("Задание 3");
-        int deliveryDistance = 10;
+        Scanner distance = new Scanner(System.in);
+        System.out.println("Enter the distance");
+        int deliveryDistance = distance.nextInt();
         int deliveryDayOutput = calculationOfDeliveryDay(deliveryDistance);
         if (deliveryDayOutput == 0 || deliveryDayOutput > 3) {
             System.out.println("Доставка не осуществляется");
